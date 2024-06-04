@@ -5,7 +5,7 @@ import * as npath from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { BuildConfig, Options } from './types';
 
-const SHIM = `globalThis.process = {
+const SHIM = `globalThis.process ??= {
 	argv: [],
 	env: Deno.env.toObject(),
 };`;
